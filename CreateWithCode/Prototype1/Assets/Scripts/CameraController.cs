@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-    public GameObject[] cameras = new GameObject[2];
-    private bool firstPerson = false;
+    public GameObject[] cameras;
+    private bool firstPerson = false, firstPerson2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +20,18 @@ public class CameraController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             firstPerson = !firstPerson;
-            ChangeCamera();
+            ChangePlayer1Camera();
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            firstPerson2 = !firstPerson2;
+            ChangePlayer2Camera();
+        }
+
 
     }
 
-    private void ChangeCamera()
+    private void ChangePlayer1Camera()
     {
         if(firstPerson)
         {
@@ -36,6 +42,20 @@ public class CameraController : MonoBehaviour
         {
             cameras[0].SetActive(false);
             cameras[1].SetActive(true);
+        }
+    }
+
+    private void ChangePlayer2Camera()
+    {
+        if (firstPerson2)
+        {
+            cameras[2].SetActive(true);
+            cameras[3].SetActive(false);
+        }
+        else
+        {
+            cameras[2].SetActive(false);
+            cameras[3].SetActive(true);
         }
     }
 }
