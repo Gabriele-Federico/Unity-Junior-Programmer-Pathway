@@ -9,11 +9,12 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput, verticalInput;
     private float speed = 10f;
     private float xRange = 15f;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Animal")
-            Debug.Log("GameOver");
+        {
+            gameManager.decreaseLives();
+        }
     }
 }

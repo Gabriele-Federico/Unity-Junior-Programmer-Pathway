@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class DetectCollision : MonoBehaviour
         if (other.gameObject.tag == "Animal") {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            gameManager.IncreaseScore(1);
         }
     }
 }
