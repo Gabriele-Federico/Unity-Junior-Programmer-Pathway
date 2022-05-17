@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+
+//90
+public class HorizontalLeftSpawnManager : MonoBehaviour
 {
 
     public GameObject[] animalPrefabs = new GameObject[3];
-    public float spawnRangeX = 20, spawnPosZ = 20;
-    public float startDelay = 2, spawnInterval = 1.5f;
+    private float spawnPosX = 20, spawnRangeZ = 20;
+    private float startDelay = 1, spawnInterval = 2.75f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +26,8 @@ public class SpawnManager : MonoBehaviour
     void SpawnRandomAnimal()
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
-        Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX + 1), 0, spawnPosZ);
+        Vector3 spawnPosition = new Vector3(spawnPosX, 0, Random.Range(-3, spawnRangeZ + 1));
 
-        Instantiate(animalPrefabs[animalIndex], spawnPosition, animalPrefabs[animalIndex].transform.rotation);
+        Instantiate(animalPrefabs[animalIndex], spawnPosition, animalPrefabs[animalIndex].transform.rotation).transform.Rotate(0, 90, 0);
     }
 }

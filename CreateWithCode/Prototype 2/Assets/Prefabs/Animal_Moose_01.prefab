@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: -7022006950041929663}
   m_Layer: 0
   m_Name: Animal_Moose_01
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c587a96cb6e1fd47becdf2a25aac9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bound: 10
+  rightLeftBound: 25
+  topBound: 30
+  lowerBound: -10
 --- !u!65 &-7022006950041929663
 BoxCollider:
   m_ObjectHideFlags: 0

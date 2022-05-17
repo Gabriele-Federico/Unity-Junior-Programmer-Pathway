@@ -18,7 +18,9 @@ public class DetectCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (other.gameObject.tag == "Animal") {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }
