@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isGrounded = true;
     public bool gameOver = false;
+    public int jumps = 2;
 
     private Animator playerAnimator;
     public ParticleSystem explosionParticle;
@@ -29,10 +30,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Space) && (jumps != 0) && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            jumps--;
             playerAnimator.SetTrigger("Jump_trig");
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, .6f);
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             dirtParticle.Play();
+            jumps = 2;
         }
         else if(collision.gameObject.CompareTag("Obstacle"))
         {
