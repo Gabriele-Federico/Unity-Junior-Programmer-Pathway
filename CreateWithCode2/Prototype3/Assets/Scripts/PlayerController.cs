@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip crashSound;
     private AudioSource playerAudio;
+    public bool speedDoubled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, .6f);
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) speedDoubled = true;
+        if (Input.GetKeyUp(KeyCode.LeftShift)) speedDoubled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
