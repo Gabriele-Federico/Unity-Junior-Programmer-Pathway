@@ -26,7 +26,7 @@ public class MoveLeft : MonoBehaviour
             if (speed != 60)
             {
                 speed = 60;
-                playerController.gameObject.GetComponent<Animator>().SetInteger("Speed_f", 4);
+                playerController.gameObject.GetComponent<Animator>().SetFloat("Speed_f", 4f);
             }
 
         }
@@ -34,7 +34,7 @@ public class MoveLeft : MonoBehaviour
             if (speed != 30)
             {
                 speed = 30;
-                playerController.gameObject.GetComponent<Animator>().SetInteger("Speed_f", 2);
+                playerController.gameObject.GetComponent<Animator>().SetFloat("Speed_f", 2f);
             }
 
 

@@ -17,9 +17,6 @@ public class PlayerControllerX : MonoBehaviour
     public AudioClip moneySound;
     public AudioClip explodeSound;
 
-    private float upperBound = 15f;
-    private float lowerBound = 1f;
-
 
     // Start is called before the first frame update
     void Start()
