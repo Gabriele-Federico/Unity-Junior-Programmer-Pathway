@@ -429,7 +429,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69f485cab9761e14991986b71a289f7d, type: 2}
+  - {fileID: 2100000, guid: e6e6f7a3c9f4839409af1eae15839382, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -668,8 +668,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupPrefab: {fileID: 7025661881535898252, guid: bff42612210f0b44a8b9e7a0b14f6623, type: 3}
-  enemyPrefab: {fileID: 4592608615768414605, guid: 4588198b67070cd4ca5064115fabe74c, type: 3}
-  waveNumber: 0
+  enemyPrefabs:
+  - {fileID: 5030771782433074977, guid: eb1f85b0155d0814eaafbc5e3228f224, type: 3}
+  - {fileID: 7019255154053234525, guid: 4588198b67070cd4ca5064115fabe74c, type: 3}
   enemyCount: 0
 --- !u!4 &1634982118
 Transform:
